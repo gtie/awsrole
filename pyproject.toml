@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "awsrole"
+dependencies = ["boto3"]
+authors = [
+  { name="gtie", email="awsrole@morp.org" },
+]
+description = "Generate temporary login link and envvars for AWS IAM Role"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+# Use dynamic versioning
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/gtie/awsrole"
+Issues = "https://github.com/gtie/awsrole/issues"
+
+[options]
+packages = "find:"
+
+[project.scripts]
+awsrole = "awsrole.awsrole:main"
+
+[tool.hatch.version]
+path = "awsrole/__init__.py"
